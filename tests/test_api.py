@@ -138,3 +138,90 @@ def test_create_story_saves_a_json_file(monkeypatch, tmp_path, client):
     assert data["id"]
     saved = json.loads((tmp_path / f"{data['id']}.json").read_text(encoding="utf-8"))
     assert saved["title"] == "测试故事"
+
+
+def test_supabase_backend_proxies_through_the_api(monkeypatch, tmp_path, client):
+    import supabase_store
+
+    remote: dict[str, dict] = {}
+
+    def fake_get(story_id):
+        return remote.get(story_id)
+
+    def fake_save(story):
+        remote[story["id"]] = json.loads(json.dumps(story))
+
+    def fake_list():
+        return [
+            {
+                "id": story_id,
+                "title": story.get("title"),
+                "level": story.get("level"),
+                "created": story.get("created", ""),
+                "seed_noun": story.get("seed_noun"),
+                "bank": False,
+                "finished": bool(story.get("finished", False)),
+                "n_han": None,
+                "n_questions": 0,
+            }
+            for story_id, story in remote.items()
+        ]
+
+    monkeypatch.setattr(app_module, "STORIES_DIR", tmp_path)
+    monkeypatch.setattr(app_module, "_use_supabase", lambda: True)
+    monkeypatch.setattr(supabase_store, "get_story", fake_get)
+    monkeypatch.setattr(supabase_store, "save_story", fake_save)
+    monkeypatch.setattr(supabase_store, "list_stories", fake_list)
+
+    remote["remote-1"] = {
+        "id": "remote-1",
+        "title": "云端故事",
+        "level": 2,
+        "created": "2026-11-21T00:00:00+00:00",
+        "sentences": ["你好。"],
+        "tokens": [],
+        "questions": [],
+        "finished": False,
+    }
+
+    loaded = client.get("/api/stories/remote-1").json()
+    assert loaded["title"] == "云端故事"
+
+    response = client.post(
+        "/api/stories/remote-1/finished", json={"finished": True}
+    )
+    assert response.status_code == 200
+    assert remote["remote-1"]["finished"] is True
+    # The local mirror is still written so bank/backup.py keeps seeing stories.
+    mirror = json.loads((tmp_path / "remote-1.json").read_text(encoding="utf-8"))
+    assert mirror["finished"] is True
+    assert "remote-1" in {item["id"] for item in client.get("/api/stories").json()}
+
+
+def test_local_fallback_when_supabase_is_unreachable(monkeypatch, tmp_path, client):
+    import supabase_store
+
+    monkeypatch.setattr(app_module, "STORIES_DIR", tmp_path)
+    monkeypatch.setattr(app_module, "_use_supabase", lambda: True)
+    story = {
+        "id": "offline-1",
+        "title": "离线故事",
+        "level": 1,
+        "created": "2026-11-21T00:00:00+00:00",
+        "sentences": [],
+        "tokens": [],
+        "questions": [],
+    }
+    (tmp_path / "offline-1.json").write_text(
+        json.dumps(story, ensure_ascii=False), encoding="utf-8"
+    )
+
+    def boom(story_id):
+        raise supabase_store.SupabaseError("connection refused")
+
+    monkeypatch.setattr(supabase_store, "get_story", boom)
+
+    response = client.get("/api/stories/offline-1")
+    assert response.status_code == 200
+    assert response.json()["title"] == "离线故事"
+

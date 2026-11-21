@@ -10,9 +10,15 @@ comprehension quiz.
 - Python 3.11+
 - `pip install -r requirements.txt`
 - `python -m playwright install chromium` (for the browser checks)
-- `DEEPSEEK_API_KEY` in the environment (never commit it)
+- `DEEPSEEK_API_KEY` in the environment or in `.env` (copy `.env.example`;
+  never commit the real key).  The placeholder value in the template counts as
+  "not configured".
 
 Optional: `DEEPSEEK_MODEL` (default `deepseek-flash`, i.e. DeepSeek-V4.1-Flash).
+
+Optional: a Supabase project for cloud story storage (see
+[Supabase storage](#supabase-storage)).  Without it the app reads and writes
+`stories/*.json` exactly as before.
 
 ## Web app
 
@@ -176,7 +182,58 @@ Copy-Item restore/stories/*.json stories/ -Force
 
 `stories/*.json` is git-ignored except `stories/sample.json`; the `bank/`
 snapshot and manifest are not ignored, so they can be committed or copied
-off-machine. The archive is 1.68 MB.
+off-machine. The archive is 1.68 MB.  When Supabase is configured the local
+files are a mirror of the cloud rows (see [Supabase storage](#supabase-storage));
+`.env`, which holds the project URL and secret key, is git-ignored.
+
+## Supabase storage
+
+Stories can live in Supabase instead of (or in addition to) the local
+`stories/*.json` files.  The FastAPI backend is the only component that talks to
+Supabase: it keeps the project's **secret key** on the server and proxies
+`GET /api/stories`, `GET /api/stories/<id>`, `POST /api/story` and the
+`finished` toggle, so the browser never receives a key.
+
+1. Create a project at <https://supabase.com>.
+2. Open **SQL Editor**, paste [`supabase_schema.sql`](supabase_schema.sql) and
+   run it.  It creates `public.stories` (indexed summary columns plus a `data
+   jsonb` payload) and enables RLS with **no** public policy, so only the secret
+   key can read or write it.
+3. Put the project URL and the secret key in `.env` (git-ignored; start from
+   `.env.example`):
+
+   ```dotenv
+   SUPABASE_URL=https://<project-ref>.supabase.co
+   SUPABASE_KEY=sb_secret_...
+   ```
+
+   `SUPABASE_KEY` may also be provided as `SUPABASE_SECRET_KEY` or the legacy
+   `SUPABASE_SERVICE_ROLE_KEY`.  The publishable key is **not** used by the
+   server and cannot read the table.
+4. Upload the existing story bank:
+
+   ```bash
+   python sync_supabase.py status   # local vs remote ids
+   python sync_supabase.py push     # upsert stories/*.json in batches
+   ```
+
+After that, `uvicorn app:app` reads and writes Supabase automatically.  Backend
+selection:
+
+| `STORY_BACKEND` | behaviour |
+| --- | --- |
+| unset / `auto` | Supabase when `SUPABASE_URL` and a key are set, else local files |
+| `files` | force `stories/*.json` (the test suite uses this) |
+| `supabase` | force Supabase |
+
+With Supabase in use, every write still mirrors to `stories/<id>.json`
+(`STORY_LOCAL_MIRROR=0` disables that), so `bank/backup.py`,
+`add_questions.py`, `build_bank.py` and the CLI keep working unchanged.  Reads
+fall back to the local file when a row is missing or the network is down, so an
+offline checkout keeps serving the last known copy.  `python
+sync_supabase.py pull --out restore` writes remote stories back as JSON files.
+`finished` is stored in the `finished` column and inside `data.finished`; the
+API updates both together.
 
 ## Future aspects
 
@@ -205,11 +262,16 @@ The story JSON is the shared substrate for every presentation layer:
 | --- | --- |
 | `vocab.py` | loads `hsk30_vocab.csv`, level ranks, replacement candidates |
 | `llm.py` | OpenAI-compatible DeepSeek client, JSON mode, retries, usage log |
+| `env_loader.py` | tiny `.env` reader shared by the DeepSeek and Supabase clients |
+| `.env.example` | committed template with placeholders (real `.env` is git-ignored) |
 | `grader.py` | LLM segmentation, Han-only length, per-word HSK rating |
 | `story.py` | seed nouns, prompts, repair loop, output schema |
 | `questions.py` | question generation, schema/vocabulary/blind validation |
 | `checker.py` | deterministic answer normalization, scoring and evidence |
 | `app.py` | FastAPI server: library, reader, listening, story/check/finished APIs |
+| `supabase_store.py` | PostgREST client and story-row mapping used by the API and sync script |
+| `sync_supabase.py` | `status` / `push` / `pull` migration between `stories/` and Supabase |
+| `supabase_schema.sql` | `stories` table, `updated_at` trigger and RLS lockdown for Supabase |
 | `static/` | library, reader and listening pages (`index.html`, `reader.html`, `listening.html`, JS, CSS) |
 | `stories/` | live saved stories; `sample.json` is the committed offline fixture |
 | `build_bank.py` | resumable one-story-per-noun bank builder |

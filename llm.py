@@ -1,8 +1,8 @@
 """DeepSeek chat helper (OpenAI-compatible JSON mode).
 
-The API key is read from ``DEEPSEEK_API_KEY``; the model defaults to
-``deepseek-flash`` (DeepSeek-V4.1-Flash) and can be overridden with
-``DEEPSEEK_MODEL``.  Nothing secret is ever stored in this file.
+The API key is read from ``DEEPSEEK_API_KEY`` (environment or ``.env``); the
+model defaults to ``deepseek-flash`` (DeepSeek-V4.1-Flash) and can be overridden
+with ``DEEPSEEK_MODEL``.  Nothing secret is ever stored in this file.
 """
 
 from __future__ import annotations
@@ -16,11 +16,20 @@ from typing import Any, Callable
 
 from openai import OpenAI
 
+from env_loader import load_dotenv
+
+load_dotenv()
+
 BASE_URL = "https://api.deepseek.com"
 DEFAULT_MODEL = "deepseek-flash"  # DeepSeek-V4.1-Flash-1017
 DEFAULT_MAX_TOKENS = 8192
 API_RETRIES = 3
 BACKOFF_SECONDS = (2.0, 4.0, 8.0)
+PLACEHOLDER_KEYS = {
+    "sk-your-deepseek-key-here",
+    "sk-replace-me",
+    "your-deepseek-api-key",
+}
 
 logger = logging.getLogger(__name__)
 
@@ -41,12 +50,17 @@ _client: OpenAI | None = None
 
 
 def api_key() -> str:
-    """Return ``DEEPSEEK_API_KEY`` or raise a helpful error."""
+    """Return ``DEEPSEEK_API_KEY`` or raise a helpful error.
+
+    Placeholder values from ``.env.example`` count as missing, so a copied
+    template fails with a clear message instead of an HTTP 401.
+    """
     key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
-    if not key:
+    if not key or key.lower() in PLACEHOLDER_KEYS:
         raise LLMError(
-            "DEEPSEEK_API_KEY is not set. Export your DeepSeek API key before "
-            "running the generator (it is never read from the repository)."
+            "DEEPSEEK_API_KEY is not set. Copy .env.example to .env and replace "
+            "the placeholder (or export the real key); it is never read from the "
+            "repository."
         )
     return key
 

@@ -110,3 +110,11 @@ def test_missing_api_key_raises_a_clear_error(monkeypatch):
     monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
     with pytest.raises(llm.LLMError):
         llm.api_key()
+
+
+def test_placeholder_api_key_is_treated_as_missing(monkeypatch):
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "sk-your-deepseek-key-here")
+    with pytest.raises(llm.LLMError) as info:
+        llm.api_key()
+    assert ".env" in str(info.value)
+

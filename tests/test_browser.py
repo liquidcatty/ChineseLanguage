@@ -1,4 +1,5 @@
 import json
+import os
 import socket
 import subprocess
 import sys
@@ -55,6 +56,7 @@ def server():
             "warning",
         ],
         cwd=str(ROOT),
+        env={**os.environ, "STORY_BACKEND": "files"},
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     )

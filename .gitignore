@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 .env
 .env.*
+!.env.example
 nouns_cache.json
 seeds_used.json
 stories/*.json
