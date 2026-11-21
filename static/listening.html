@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSK Listening</title>
+  <link rel="stylesheet" href="/static/style.css?v=7">
+</head>
+<body>
+  <header class="topbar reader-topbar">
+    <a class="brand" href="/">
+      <span class="brand-cn">中文</span>
+      <span class="brand-en">HSK Listening</span>
+    </a>
+    <div class="reader-tools">
+      <a class="back-link" href="/">← Library</a>
+    </div>
+  </header>
+
+  <p id="status" class="status" role="status"></p>
+
+  <main class="reader-page">
+    <section id="reader">
+      <h1 id="title"></h1>
+      <p id="story-meta" class="story-meta"></p>
+      <label class="finished-label"><input id="finished-check" class="finished-check" type="checkbox"> <span>Finished</span></label>
+
+      <div class="listen-controls">
+        <button id="play" class="listen-play" type="button">Play</button>
+        <button id="transcript-toggle" class="toggle" type="button">Show text</button>
+      </div>
+      <p id="listen-status" class="listen-status" role="status"></p>
+
+      <p id="empty" class="empty" hidden>Story not found. <a href="/">Back to the library</a>.</p>
+      <div id="transcript" class="listen-transcript" lang="zh-Hans" hidden></div>
+    </section>
+
+    <section id="quiz" hidden>
+      <h2>Comprehension</h2>
+      <div id="questions"></div>
+      <div class="quiz-actions">
+        <button id="check" type="button">Check answers</button>
+        <span id="score" class="score"></span>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/listening.js?v=7"></script>
+</body>
+</html>

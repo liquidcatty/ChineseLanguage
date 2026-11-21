@@ -1,0 +1,1389 @@
+{
+  "level": 4,
+  "seed_noun": "十字路口",
+  "title": "小雨的自行车",
+  "text": "小雨常常骑自行车去上班。她家离公司不远，骑自行车只要二十分钟。可是最近她遇到麻烦：重要的十字路口正在修，汽车都无法通过。开始，她不清楚这个情况，到了那里才发现路被封了。她只好带着车走了很久，结果上班迟到了。后来，她早出发十分钟，想找别的路。邻居告诉她，可以走公园旁边的路，但是那条路不太好走。小雨决定试一下。这条路虽然不宽，但是风景很好，空气也新鲜。到了十字路口时，她从旁边的行人路上安全地骑了过去。从那时起，小雨天天都走这条路，再也没有迟到过。她笑着说，困难有时也能让人有新的发现。",
+  "sentences": [
+    "小雨常常骑自行车去上班。",
+    "她家离公司不远，骑自行车只要二十分钟。",
+    "可是最近她遇到麻烦：重要的十字路口正在修，汽车都无法通过。",
+    "开始，她不清楚这个情况，到了那里才发现路被封了。",
+    "她只好带着车走了很久，结果上班迟到了。",
+    "后来，她早出发十分钟，想找别的路。",
+    "邻居告诉她，可以走公园旁边的路，但是那条路不太好走。",
+    "小雨决定试一下。",
+    "这条路虽然不宽，但是风景很好，空气也新鲜。",
+    "到了十字路口时，她从旁边的行人路上安全地骑了过去。",
+    "从那时起，小雨天天都走这条路，再也没有迟到过。",
+    "她笑着说，困难有时也能让人有新的发现。"
+  ],
+  "tokens": [
+    [
+      {
+        "w": "小雨",
+        "level": null,
+        "status": "proper",
+        "proper": true
+      },
+      {
+        "w": "常常",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "骑",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "自行车",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "去",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "上班",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "她",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "家",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "离",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "公司",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "不",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "远",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "骑",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "自行车",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "只要",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "二十",
+        "level": null,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "分钟",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "可是",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "最近",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "她",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "遇到",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "麻烦",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "：",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "重要",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "的",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "十字路口",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "正在",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "修",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "汽车",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "都",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "无法",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "通过",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "开始",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "她",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "不",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "清楚",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "这个",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "情况",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "到",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "了",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "那里",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "才",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "发现",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "路",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "被",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "封",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "了",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "她",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "只好",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "带着",
+        "level": null,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "车",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "走",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "了",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "很久",
+        "level": null,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "结果",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "上班",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "迟到",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "了",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "后来",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "她",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "早",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "出发",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "十",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "分钟",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "想",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "找",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "别的",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "路",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "邻居",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "告诉",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "她",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "可以",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "走",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "公园",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "旁边",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "的",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "路",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "但是",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "那条",
+        "level": null,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "路",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "不",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "太",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "好走",
+        "level": null,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "小雨",
+        "level": null,
+        "status": "proper",
+        "proper": true
+      },
+      {
+        "w": "决定",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "试",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "一下",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "这",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "条",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "路",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "虽然",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "不",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "宽",
+        "level": 5,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "但是",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "风景",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "很",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "好",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "空气",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "也",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "新鲜",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "到",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "了",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "十字路口",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "时",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "她",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "从",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "旁边",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "的",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "行人",
+        "level": 5,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "路",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "上",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "安全",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "地",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "骑",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "了",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "过去",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "从",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "那时",
+        "level": null,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "起",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "小雨",
+        "level": null,
+        "status": "proper",
+        "proper": true
+      },
+      {
+        "w": "天天",
+        "level": null,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "都",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "走",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "这条",
+        "level": null,
+        "status": "oov",
+        "proper": false
+      },
+      {
+        "w": "路",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "再",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "也",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "没有",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "迟到",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "过",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ],
+    [
+      {
+        "w": "她",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "笑",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "着",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "说",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "，",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      },
+      {
+        "w": "困难",
+        "level": 4,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "有时",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "也",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "能",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "让",
+        "level": 2,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "人",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "有",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "新",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "的",
+        "level": 1,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "发现",
+        "level": 3,
+        "status": "ok",
+        "proper": false
+      },
+      {
+        "w": "。",
+        "level": null,
+        "status": "punct",
+        "proper": false
+      }
+    ]
+  ],
+  "new_words": [
+    {
+      "word": "二十",
+      "level": null
+    },
+    {
+      "word": "带着",
+      "level": null
+    },
+    {
+      "word": "很久",
+      "level": null
+    },
+    {
+      "word": "那条",
+      "level": null
+    },
+    {
+      "word": "好走",
+      "level": null
+    },
+    {
+      "word": "宽",
+      "level": 5
+    },
+    {
+      "word": "行人",
+      "level": 5
+    },
+    {
+      "word": "那时",
+      "level": null
+    },
+    {
+      "word": "天天",
+      "level": null
+    },
+    {
+      "word": "这条",
+      "level": null
+    }
+  ],
+  "metrics": {
+    "n_han": 214,
+    "oov_count": 10,
+    "rounds": 6,
+    "converged": false,
+    "usage": {
+      "calls": 45,
+      "prompt_tokens": 14207,
+      "completion_tokens": 7817,
+      "total_tokens": 22024
+    }
+  },
+  "log": [
+    {
+      "round": 0,
+      "oov": [
+        "每天",
+        "骑车",
+        "二十",
+        "一个",
+        "修路",
+        "过不去",
+        "第一天",
+        "不知道",
+        "这件事",
+        "到了",
+        "推着",
+        "绕",
+        "很远",
+        "第二天",
+        "十分钟",
+        "一条",
+        "新路",
+        "小路",
+        "那条",
+        "不太平",
+        "试一试",
+        "有点",
+        "窄",
+        "人行道",
+        "顺利地",
+        "那天",
+        "这条",
+        "有时候",
+        "带来"
+      ],
+      "n_han": 221,
+      "length_ok": true,
+      "seed_present": true,
+      "changed": []
+    },
+    {
+      "round": 1,
+      "oov": [
+        "二十",
+        "一个",
+        "过不去",
+        "不知道",
+        "这件事",
+        "到了",
+        "很远",
+        "十分钟",
+        "一条",
+        "新路",
+        "小路",
+        "那条",
+        "好走",
+        "有点",
+        "窄",
+        "人行道",
+        "顺利地",
+        "那时",
+        "每天",
+        "这条",
+        "有时候"
+      ],
+      "n_han": 222,
+      "length_ok": true,
+      "seed_present": true,
+      "changed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        11,
+        12
+      ]
+    },
+    {
+      "round": 2,
+      "oov": [
+        "二十",
+        "一个",
+        "不能",
+        "很远",
+        "十分钟",
+        "小路",
+        "那条",
+        "好走",
+        "宽",
+        "行人",
+        "天天",
+        "这条"
+      ],
+      "n_han": 217,
+      "length_ok": true,
+      "seed_present": true,
+      "changed": [
+        3,
+        4,
+        6,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "round": 3,
+      "oov": [
+        "二十",
+        "很远",
+        "十分钟",
+        "小路",
+        "那条",
+        "好走",
+        "宽",
+        "人行路",
+        "那时",
+        "每天",
+        "这条"
+      ],
+      "n_han": 216,
+      "length_ok": true,
+      "seed_present": true,
+      "changed": [
+        3,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "round": 4,
+      "oov": [
+        "二十",
+        "推着",
+        "走了",
+        "很长",
+        "十分钟",
+        "一条",
+        "那条",
+        "好走",
+        "宽",
+        "人行路",
+        "那时",
+        "每天",
+        "这条"
+      ],
+      "n_han": 219,
+      "length_ok": true,
+      "seed_present": true,
+      "changed": [
+        5,
+        7
+      ]
+    },
+    {
+      "round": 5,
+      "oov": [
+        "二十",
+        "带着",
+        "很久",
+        "那条",
+        "好走",
+        "宽",
+        "行人",
+        "那时",
+        "天天",
+        "这条"
+      ],
+      "n_han": 214,
+      "length_ok": true,
+      "seed_present": true,
+      "changed": [
+        5,
+        6,
+        7,
+        10,
+        11
+      ]
+    },
+    {
+      "round": 6,
+      "oov": [
+        "二十",
+        "推着",
+        "走了",
+        "很长",
+        "那条",
+        "好走",
+        "宽",
+        "人行路",
+        "那时",
+        "每天",
+        "这条"
+      ],
+      "n_han": 216,
+      "length_ok": true,
+      "seed_present": true,
+      "changed": [
+        5,
+        10,
+        11
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "mc",
+      "question": "小雨平时怎么去上班？",
+      "options": [
+        "骑自行车",
+        "走路",
+        "坐汽车"
+      ],
+      "answer": "A",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "type": "mc",
+      "question": "邻居告诉小雨可以走哪条路？",
+      "options": [
+        "公司前面的路",
+        "公园旁边的路",
+        "十字路口中间的路"
+      ],
+      "answer": "B",
+      "evidence": [
+        6
+      ]
+    },
+    {
+      "type": "mc",
+      "question": "小雨走公园旁边那条路时，觉得怎么样？",
+      "options": [
+        "路很宽，汽车很多",
+        "路虽然不宽，但是风景很好",
+        "路很长，走起来很累"
+      ],
+      "answer": "B",
+      "evidence": [
+        8
+      ]
+    }
+  ],
+  "quiz_metrics": {
+    "rounds": 3,
+    "failed_by_reason": {
+      "vocabulary": 5
+    },
+    "usage": {
+      "calls": 49,
+      "prompt_tokens": 11378,
+      "completion_tokens": 4754,
+      "total_tokens": 16132
+    }
+  },
+  "quiz_complete": true
+}
